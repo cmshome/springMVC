@@ -1,6 +1,5 @@
 package com.lxk.model;
 
-import com.sun.istack.internal.Nullable;
 
 /**
  * 博客排序类型枚举
@@ -34,7 +33,6 @@ public enum BlogSortTypeEnum {
      *
      * @param sortType 类型的字符串描述
      */
-    @Nullable
     public static BlogSortTypeEnum fromTypeName(String sortType) {
         if (Blog.READ.equals(sortType)) {
             return READ;

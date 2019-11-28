@@ -84,6 +84,6 @@
     </bean>
 
     <!-- dao -->
-    <import resource="applicationContext-dao.xml"/>
+<!--    <import resource="applicationContext-dao.xml"/>-->
 
 </beans>
