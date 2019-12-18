@@ -5,6 +5,7 @@ import com.lxk.service.TestService;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -32,6 +33,23 @@ public class ApplicationInterceptor extends HandlerInterceptorAdapter {
         String accessParam = request.getQueryString();
         System.out.println("项目名称，根路径" + root + ";访问路径" + accessPath + ";参数" + ";相对路径" + servletPath + accessParam);
         testService.test();
+        Cookie cookie = getCookie(request);
+        if (cookie != null) {
+            System.out.println("cookie is " + cookie.getValue());
+        }
         return true;
+    }
+
+    /**
+     * 将cookie封装到Map里面
+     */
+    private static Cookie getCookie(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        for (int i = 0; null != cookies && i < cookies.length; i++) {
+            if ("token".equals(cookies[i].getName())) {
+                return cookies[i];
+            }
+        }
+        return null;
     }
 }
