@@ -10,7 +10,7 @@
 
     <properties>
         <java-version>1.8</java-version>
-        <org.springframework-version>5.1.3.RELEASE</org.springframework-version>
+        <org.springframework-version>5.2.3.RELEASE</org.springframework-version>
         <com.google.guava-version>19.0</com.google.guava-version>
         <org.slf4j-version>1.7.5</org.slf4j-version>
         <org.spring-data-mongodb-version>2.1.1.RELEASE</org.spring-data-mongodb-version>
